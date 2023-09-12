@@ -165,3 +165,4 @@ The import process enables you to change the name of the dashboard, pick the dat
 
 ![Alt text](/Screenshots/Grafana_Query.png?raw=true "Grafana example")
 
+* Once the above was configured, save and apply the changes on the top right-side menue, to view the CloudWatch logs of your Lambda function
