@@ -153,3 +153,14 @@ Perform one of the following steps:
 
 The import process enables you to change the name of the dashboard, pick the data source you want the dashboard to use(CloudWatch in our case), and specify any metric prefixes (if the dashboard uses any).
 
+
+### Accesing the logs
+
+* Click Dashboards in the left-side menu.
+* Click New and select **New Dashboard**
+* In the next screen, select **Add Visualization"
+* Select the **CloudWatch** Data source
+* On the right-side menu, select **Table** instead of **Time-series**
+* On the bottom left-side, under the **Query** section, make sure to configure the query as below:
+
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
