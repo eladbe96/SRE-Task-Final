@@ -22,8 +22,8 @@ data "aws_iam_policy_document" "policy" {
 }
 
 
-resource "aws_iam_role" "lambda_role" {
-  name = "lambda_execution_role"
+resource "aws_iam_role" "lambda_role_2" {
+  name = "lambda_execution_role_2"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -40,7 +40,7 @@ resource "aws_iam_role" "lambda_role" {
 
 resource "aws_iam_role_policy" "lambda_policy" {
   name = "lambda_policy"
-  role = aws_iam_role.lambda_role.id
+  role = aws_iam_role.lambda_role_2.id
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -68,7 +68,7 @@ resource "aws_lambda_function" "lambda" {
   function_name = var.function_name
   filename         = "my_deployment_package.zip"
   source_code_hash = filebase64sha256("my_deployment_package.zip")
-  role    = aws_iam_role.lambda_role.arn
+  role    = aws_iam_role.lambda_role_2.arn
   handler = "main.lambda_handler"
   runtime = var.runtime
   environment {

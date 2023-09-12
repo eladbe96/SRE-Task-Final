@@ -10,7 +10,7 @@ provider "github" {
   token = var.github_token
 }
 resource "github_repository" "sre_scripts" {
-    name        = "SRE-Task_new_v2"
+    name        = var.repo_name
     description = "Internal scripts for SRE"
 
     visibility   = "public"

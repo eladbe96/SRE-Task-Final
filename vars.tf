@@ -9,7 +9,7 @@ variable "aws_region" {
 }
 
 variable "function_name" {
-  default = "github_logger"
+  default = "github_logger_lambda2"
 }
 variable "runtime" {
   default = "python3.7"
