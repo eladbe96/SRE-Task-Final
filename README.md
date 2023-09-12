@@ -163,4 +163,4 @@ The import process enables you to change the name of the dashboard, pick the dat
 * On the right-side menu, select **Table** instead of **Time-series**
 * On the bottom left-side, under the **Query** section, make sure to configure the query as below:
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](/SRE-Task-Final/Screenshots/Grafana_Query.png?raw=true "Optional Title")
