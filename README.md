@@ -1,6 +1,7 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
+![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)
 
 # Github_Logger Project
 
@@ -96,4 +97,59 @@ Apply the configuration:
 ```bash
 terraform apply
 ```
+
+## Usage/Examples
+
+Once a pull request was merged to your repo, check for your logs via one of the following:
+
+* CloudWatch logs
+* AWS cli 
+* External log viewer(for example: Grafan)
+
+To check via AWS cli, you can use the following command:
+```bash
+aws logs filter-log-events --log-group-name "/aws/lambda/function_name" | less
+```
+In our case, the function name is "github_logger:
+```bash
+aws logs filter-log-events --log-group-name "/aws/lambda/github_logger" | less
+```
+
+### Grafana example:
+
+To view the logs via Grafana, access the below link for the installation according to your Operating System:
+
+```bash
+https://grafana.com/grafana/download
+```
+#### Login
+* Open your web browser and go to ***http://localhost:3000/***.
+* The default HTTP port that Grafana listens to is 3000 unless you have configured a different port.
+* On the sign-in page, enter admin for the username and password.
+* Click Sign in.
+* If successful, you will see a prompt to change the password.
+* Click OK on the prompt and change your password.
+
+#### Adding Data source:
+
+To access the CloudWatch logs via Grafana dashboard, follow the instructions below:
+
+* Click **Connections** in the left-side menu.
+* Under Your connections, click **Data sources**.
+* Enter **CloudWatch** in the search bar.
+* Click **CloudWatch**.
+* Fill the required displayed configuration.
+
+#### Import Lambda dashboard
+
+* Click Dashboards in the left-side menu.
+* Click New and select Import in the dropdown menu.
+
+Perform one of the following steps:
+
+* Upload a dashboard JSON file
+* Paste a Grafana.com dashboard URL
+* Copy the dashboard's ID
+
+The import process enables you to change the name of the dashboard, pick the data source you want the dashboard to use(CloudWatch in our case), and specify any metric prefixes (if the dashboard uses any).
 
