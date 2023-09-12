@@ -63,11 +63,6 @@ def lambda_handler(event, context):
                 deleted = "Deletions:", item.get("deletions")
                 modified = "Total Modifications:", item.get("changes")
                 logger.info(f'{file}{additions}{deleted}{modified}')
-                # logger.info(additions)
-                # logger.info(deleted)
-                # logger.info(modified)
-
-            #logger.info(changed_files)
         else:
             return {'statusCode': 200, 'body': json.dumps("The pull request isn't merged")}
    
