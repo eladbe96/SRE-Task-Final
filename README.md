@@ -104,7 +104,7 @@ Once a pull request is merged to your repo, check for your logs via one of the f
 
 * CloudWatch logs
 * AWS CLI 
-* External log viewer(for example: Grafan)
+* External log viewer(for example: Grafana)
 
 To check via AWS CLI, you can use the following command:
 ```bash
